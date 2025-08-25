@@ -16,21 +16,18 @@
     </dependency>
   </dependencies>
   <build>
-        <finalName>${project.artifactId}##${project.version}</finalName>
-                 <plugins>
-                        <plugin>
-                                <groupId>org.apache.tomcat.maven</groupId>
-                                <artifactId>tomcat7-maven-plugin</artifactId>
-                                <version>2.2</version>
-                                <configuration>
-                                <path>/${project.artifactId}##${project.version}</path>
-                                <url>http://localhost:8080/manager/text</url>
-                                        <username>admin</username>
-                                        <password>adminadmin</password>
-                                        <update>true</update>
-                                </configuration>
-                        </plugin>
-                </plugins>
+        <plugins>
+        <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <configuration>
+                <url>http://localhost:8080/manager/text</url>
+                <server>tomcat</server>
+                <path>/${project.artifactId}##${project.version}</path>
+            </configuration>
+        </plugin>
+    </plugins>
 
                 <resources>
                         <resource>
